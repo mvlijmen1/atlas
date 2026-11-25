@@ -40,6 +40,13 @@ Onder weergave vallen alle standaard weergaveopties voor de kaartlaag te configu
 
 - **Is selecteerbaar:** Met het aanzetten van de "is selecteerbaar" optie, zorg je ervoor dat de betreffende kaartlaag selecteerbaar is en je features op deze kaartlaag kan selecteren. _Standaard_: aan.
 - **Objecten clusteren:** Groepeert objecten die dicht bij elkaar staan tot één symbool met het aantal objecten. Bij inzoomen worden clusters automatisch opgesplitst. Deze optie is alleen beschikbaar voor een laag met brontype **WFS**. _Standaard_: uit.
+
+!!! warning "Objecten clusteren werkt alleen met geometrie van het type: Point"
+
+    Wanneer de geometrieobjecten van het type Multipoint zijn dan moet dit omgezet worden in Geoserver.
+    Selecteer de laag in Geoserver en zet bij Gegevens -> Attributen, een vinkje bij Customize attributes. klik daarna op het potloodje bij het gpeometrieveld (Edit) en pas het veldtype aan naar Point. Sla daarna de aanpassingen op. Kies als style in Geoserver de standaard point style (het rode blokje). In Atlas worden (geclusterde) objecten getoond als/in een blauwe cirkel.
+
+    
 - **Geselecteerde objecten niet highlighten:** Met het aanzetten van deze optie worden features van deze kaartlaag nog steeds opgehaald en getoond in de detail- en dataweergave, maar niet met de blauwe highlightstijl op de kaart weergegeven. Dit geldt ook wanneer een gebruiker vanuit de lijst-, detail- of dataweergave op **Bekijk** klikt. _Standaard_: uit.
 - **Haal detailinformatie als HTML op bij de bron:** Met het aanzetten van de "haal detailinformatie op als HTML bij de bron" optie, zorg je ervoor dat het getFeatureInfo request wat naar betreffende kaartlaag bron wordt gedaan geen JSON-data formaat terugverwacht maar een HTML-data formaat. _Standaard_: uit.
 - **Toon laag in detail- en dataweergave:** Met het aanzetten van de "toon laag in detail- en dataweergave" optie zorg je ervoor dat de laag zichtbaar is binnen het detail en dataweergave. _Standaard_: aan.
